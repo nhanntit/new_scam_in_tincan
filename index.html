@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html ng-app='mainApp' ng-click='handleClickOutSideMenu($event)' ng-init="configs = [{company_name : '',&#x000A;server_env: {env: 'staging', host: 'https://d2c2iox7hom5da.cloudfront.net'},&#x000A;current_zone_id: '',&#x000A;is_custom_training : '0',&#x000A;}]">
+  <head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <meta content='2017-06-30' name='revised'>
+    <title>Phriendly Phishing</title>
+    <link data-turbolinks-track="false" href="https://d2c2iox7hom5da.cloudfront.net/assets/scam_training-4206b883ddbef32012e28285a735b7b3.css" media="all" rel="stylesheet" type="text/css" />
+    <script data-turbolinks-track="false" src="https://d2c2iox7hom5da.cloudfront.net/assets/scam_training-1e9326e431f205d678505aae1e34ffef.js" type="text/javascript"></script>
+    <meta content="authenticity_token" name="csrf-param" />
+    <meta content="QYQ2q07qTB0uHfLZJirVyH/4vqXrYvyA8MfEZtCIBVo=" name="csrf-token" />
+  </head>
+  <body ng-controller='MasterLayoutController'>
+    <div class='container col-xs-10 col-xs-offset-1'>
+      <div class='container_training'>
+        <div ui-view=''></div>
+        <div class='breadcrumb-nav' ng-class="{'btn-fadeOut' : enable_btn_action, 'fadeIn' : !enable_btn_action}" ng-hide='is_thank_you_page'>
+          <div id='home'></div>
+          <div id='arrow'></div>
+          <ol class='breadcrumb'>
+            <li ng-repeat='item in navigation.breadcrumb'>
+              <a href='scam_training#{{item.href}}'>{{item.name}}</a>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

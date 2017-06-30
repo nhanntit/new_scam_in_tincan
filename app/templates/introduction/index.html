@@ -1,0 +1,58 @@
+<div ng-if="show_lading_page" ng-include="'scam_training/templates/layout/_landing_page.html'"></div>
+<div ng-if="!show_lading_page">
+    <div class="menu" ng-include="'scam_training/templates/menus/_menu.html'"></div>
+    <div class='loader_container' ng-show="intro.is_loading">
+        <div class="loader" ng-style="{opacity: intro.is_loading ? '1':'0' }">
+        </div>
+    </div>
+
+    <div id="main_content">
+        <div id="landing_page" ng-show="animate_slide" ng-click="handleClickOutSideHint($event)">
+            <img ng-src="{{config_env.base_url}}/assets/scam_training/1-bg.jpg" imagepreload style="width: 100%; height: 591px">
+            <div class="slide-1-fade" ng-show="slide_1.is_show" >
+                <img class="animated character" ng-class="slide_1.image1" ng-src="{{config_env.base_url}}/assets/scam_training/1-1-character.png" />
+                <div class="animated hello left" ng-class="slide_1.image2">
+                    <img class="bubble" ng-src="{{config_env.base_url}}/assets/scam_training/1-1-bubble.png" />
+                    <p class="text">
+                        Hello <span style="color: #d3de18">{{json_data['service_desk'][0]['first_name']}}</span>!
+                        <br>
+                        Welcome to S.C.A.M Training 101
+                    </p>
+                </div>
+            </div>
+
+            <div class="slide-2-fade" ng-show="slide_2.is_show">
+                <img class="animated character1" ng-class="slide_2.image1" ng-src="{{config_env.base_url}}/assets/scam_training/1-2-character.png" />
+                <img class="animated text" ng-class="slide_2.image2" ng-src="{{config_env.base_url}}/assets/scam_training/1-2-text-1.png" />
+                <img class="animated award" ng-class="slide_2.image3" ng-src="{{config_env.base_url}}/assets/scam_training/1-2-text-2.png" />
+            </div>
+
+            <div class="slide-3-fade" ng-show="slide_3.is_show">
+                <img class="animated lisa" ng-class="slide_3.image1" ng-src="{{config_env.base_url}}/assets/scam_training/1-1-character.png" />
+                <img class="animated menu" ng-class="slide_3.image2" ng-src="{{config_env.base_url}}/assets/scam_training/1-3-bubble-text-intro-menu.png" />
+                <img class="animated line" ng-class="slide_3.image3" ng-src="{{config_env.base_url}}/assets/scam_training/1-3-line-intro-menu.png">
+                <img class="animated percentage" ng-class="slide_3.image4" ng-src="{{config_env.base_url}}/assets/scam_training/1-3-bubble-text-intro-percentage-chart.png" />
+                <img class="animated percentage-line" ng-class="slide_3.image5" ng-src="{{config_env.base_url}}/assets/scam_training/1-3-line-intro-menu.png">
+            </div>
+
+            <div class="slide-5-fade" ng-show="slide_5.is_show">
+                <img class="animated lisa" ng-class="slide_5.image1" ng-src="{{config_env.base_url}}/assets/scam_training/1-1-character.png" />
+                <img class="animated board" ng-class="slide_5.image2" ng-src="{{config_env.base_url}}/assets/scam_training/1-5-board.png">
+            </div>
+        </div>
+
+        <div id="slides" ng-show="!animate_slide">
+            <div ng-if="!is_statics"><div ng-include="'scam_training/templates/introduction/'+param.data"></div></div>
+            <div ng-if="is_statics"><img ng-src="/assets/scam_training/slides/{{param.data}}" style="width: 100%;"></div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <div class="button" ng-show="enable_btn_action ">
+            <div id="back"  ng-click = "navigation.back()">
+            </div>
+            <div id="next"  ng-click = "navigation.next()">
+            </div>
+        </div>
+    </div>
+</div>

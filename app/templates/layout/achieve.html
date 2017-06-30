@@ -1,0 +1,56 @@
+<div id="main_content">
+    <div class="modal-content achieve-content">
+        <div class="modal-body">
+            <div class="achievement">
+                <div class="logo_achieve">
+                    <img ng-src="{{config_env.base_url}}/assets/scam_training/achievements/label-achivement.png" />
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-8 col-xs-8" style="text-align: center">
+                        <ul class="achieve">
+                            <li ng-repeat="achieve in student_achieve">
+                                <div class="item-achieve">
+                                    <div class="contain">
+                                        <div ng-if="achieve.rank == 3">
+                                            <span class="achievement-popup logo-{{achieve.type}}"></span>
+                                            <h5 class="achieve-title" ng-bind-html="achieve.title"></h5>
+                                            <span class="achievement-star star-{{achieve.rank}}"></span>
+                                            <p class="achieve-desc" ng-bind-html="achieve.desc"></p>
+                                        </div>
+                                        <div ng-if="achieve.rank < 3">
+                                            <span class="achievement-popup logo-{{achieve.type}}-disable"></span>
+                                            <h5 class="achieve-title-disable" ng-bind-html="achieve.title"></h5>
+                                            <span class="achievement-star star-{{achieve.rank}}"></span>
+                                            <p class="achieve-desc-disable" ng-bind-html="achieve.desc"></p>
+                                        </div>
+                                    </div>
+                                    <div ng-if="achieve.rank < 3 && activeAchievement[achieve.type]" class="try-again" ui-sref="{{achieve.href}}" ng-click="ok()">TRY AGAIN</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 col-xs-4 cup">
+                        <div ng-if="achieve_best_score >= pass_score">
+                            <img class="logo" ng-src="{{config_env.base_url}}/assets/scam_training/achievements/IconBage_Level1.png">
+                            <h5>Phriendly Phishing Level 1 Award</h5>
+                            <img class="cup_award" ng-src="{{config_env.base_url}}/assets/scam_training/achievements/Cup-1.png">
+                            <p ng-if="!is_custom_training">Complete and follow the entire tutorial</p>
+                            <p ng-if="is_custom_training">Your completion results will be sent to Campus in the next 5 days</p>
+                        </div>
+                        <div ng-if="achieve_best_score < pass_score">
+                            <p style="font-size: 18.9px; margin-top: 70px;"><b>YOUR SCORE:</b></p>
+                            <p id="display-best-score" class="cup_award_disable" ng-if="best_score == -1">N/A</p>
+                            <p id="display-best-score" class="cup_award_disable" ng-if="best_score != -1">{{best_score}}%</p>
+                            <p style="font-size: 13.8px; width: 170px"><b>Unfortunately <br> That Is Not A Passing Mark</b></p>
+                            <p style="font-size: 10.8px">Please select a section to try again</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-lg btn-achieve" type="button" ng-click="ok()">OK</button>
+        </div>
+    </div>
+</div>

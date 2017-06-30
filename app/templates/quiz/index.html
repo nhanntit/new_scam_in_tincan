@@ -1,0 +1,70 @@
+<div>
+    <div class="menu" ng-include="'scam_training/templates/menus/_menu.html'"></div>
+    <div id="main_content" class="quiz">
+        <div id="slides">
+            <div class='loader_container' ng-show="quiz.config.is_loader">
+                <div class="loader" ng-style="{opacity: quiz.config.is_loader ? '1':'0' }">
+                </div>
+            </div>
+            <img ng-src="{{quiz.background_img}}" style="width: 100%;" />
+            <img class='quiz_check_icon' ng-src="{{config_env.base_url}}/assets/scam_training/slides/quiz/quiz_incorrect.png"/>
+            <img class='quiz_check_icon' ng-src="{{config_env.base_url}}/assets/scam_training/slides/quiz/quiz_correct.png"/>
+            <div class="quiz_content">
+
+                <div ng-if="quiz.config.setup_question">
+                    <div class="quiz_question" data-value="{{current_quiz.id}}">
+                        <div class="question">{{current_quiz.question}}</div>
+                        <div class="note">{{current_quiz.note}}</div>
+                    </div>
+                    <div class="quiz_answer num_{{current_quiz.answer.length}}">
+                        <div ng-repeat="value in current_quiz.answer">
+                            <div style='padding-left: 50px; width: 50%; padding-right: 15px; float:left'>
+                                <div class="answer_box border_{{style}}
+                            {{current_quiz.last_selected == value.id ? style : '' }}
+                            {{current_quiz.last_selected == value.id  && quiz.data.user_data[current_quiz.index].answer_correct_id != value.id && quiz.data.submit_answer[current_quiz.index] != undefined ? 'incorrect':''}}
+                            {{quiz.data.user_data[current_quiz.index].answer_correct_id == value.id  ? 'correct':''}}"
+                                     id="answer_{{value.id}}">
+                                    <input type="radio" name="question_answer_{{current_quiz.id}}" id="{{value.id}}" style="display: none">
+                                    <label for={{value.id}} class="answer" ng-click="quiz.selectAnswer(current_quiz.index, value.id)">
+                                        <div class="answer_no inner box_circle">
+                                            {{$index + 1}}
+                                        </div>
+                                        <div class="answer_text inner inner_text">
+                                            {{value.text}}
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quiz_submit">
+
+                        <button ng-class="[current_quiz.is_submit, 'button', style]" ng-click = "quiz.submitAnswers(quiz.quiz_attrs); quiz.calc()" ng-show="quiz.config.show_content">SUBMIT</button>
+                    </div>
+                </div>
+                <div ng-if="!quiz.config.setup_question" style="height: 100%;">
+                    <div class="no_question"> No question has been setup yet!</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation" ng-class="enable_btn_action" ng-show="quiz.config.show_content">
+        <div class="quiz_progress no-padding" ng-if="quiz.config.setup_question">
+            <span class="pull-left progress_label">{{quiz.data.submit_answer.length}} / 3</span>
+            <div class="col-sm-2 progress_container" style="position: relative; float: left">
+                <uib-progressbar max="3" value="quiz.data.submit_answer.length" type="{{style}}" style="position: absolute;"/>
+            </div>
+            <span class="pull-right progress_label" style="padding-top:0px">You still have {{3 - quiz.data.submit_answer.length}} question left</span>
+        </div>
+        <div class="button">
+            <div id="back" ng-class="quiz.move.back" ng-click = "navigation.back()">
+            </div>
+            <div id="next" ng-class="quiz.move.next"  ng-click = "navigation.next()">
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-if="quiz.config.show_modal">
+    <achievement.popup section="{{quiz.current_section}}"></achievement.popup>
+</div>

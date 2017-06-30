@@ -1,0 +1,22 @@
+<div class="background">
+    <div class="content">
+        <h3 style="text-align: center;font-size: 23px; margin: 15px auto 10px"><b>Millie Directive #3 - Option 2</b></h3>
+        <br>
+        <div class="contact">
+            <span>Service Desk Contact Information:</span>
+        </div>
+        <div class="info" ng-show="json_data.service_desk[0].journey_type == 'Yearly Journey'">
+            <p ng-show="json_data.service_desk[0].service_desk.service_desk_name">Name: {{json_data.service_desk[0].service_desk.service_desk_name}}</p>
+            <br>
+            <p ng-show="json_data.service_desk[0].service_desk.email">Email: {{json_data.service_desk[0].service_desk.email}}</p>
+            <br>
+            <p ng-show="json_data.service_desk[0].service_desk.phone">Phone number: {{json_data.service_desk[0].service_desk.phone}}</p>
+            <br>
+            <p ng-show="json_data.service_desk[0].service_desk.instructions">Instructions: {{json_data.service_desk[0].service_desk.instructions}}</p>
+        </div>
+
+        <div class="info  text-center" ng-show="json_data.service_desk[0].journey_type == 'Training Trial'">
+            < Service Desk details go here during live training >
+        </div>
+    </div>
+</div>

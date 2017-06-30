@@ -1,0 +1,26 @@
+<div ng-if="sender.show_landing_page" ng-include="'scam_training/templates/layout/_landing_page.html'"></div>
+<div ng-if="!sender.show_landing_page">
+    <div class="menu" ng-include="'scam_training/templates/menus/_menu.html'"></div>
+    <div id="main_content">
+        <div id="landing_page_sender" ng-show="sender.animate_slide">
+            <div class="slide-fade">
+                <img class="animated swindling-fadeOutRight" ng-src="{{config_env.base_url}}/assets/scam_training/1-46-character.png" />
+                <img class="animated board-fadeOutDown" ng-src="{{config_env.base_url}}/assets/scam_training/1-46-board.png" />
+            </div>
+        </div>
+        <div id="slides" ng-show="!sender.animate_slide">
+            <img ng-src="{{sender.static_url}}" style="width: 100%;">
+        </div>
+    </div>
+
+    <div class="navigation" ng-class="enable_btn_action">
+        <div class="button">
+            <div id="back" ng-show="can_go_back"  ng-click = "navigation.back()">
+            <ins></ins>
+            </div>
+            <div id="next" ng-click = "navigation.next()">
+            <ins></ins>
+            </div>
+        </div>
+    </div>
+</div>

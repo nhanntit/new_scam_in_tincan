@@ -1,0 +1,17 @@
+<img class="" ng-class="img1" ng-src="{{config_env.base_url}}/assets/scam_training/1-bg.jpg"  style="width:100%"/>
+<div id="landing_page">
+    <div class="slide-3-fade">
+        <img class="lisa-landingPage" ng-src="{{config_env.base_url}}/assets/scam_training/lisa.png" >
+    </div>
+</div>
+<img class="landing-page-bubble" ng-src="{{config_env.base_url}}/assets/scam_training/landing-page-bubble.png" />
+<img ng-if="!is_custom_training" class="logo-landing-page" style="width: 135px" ng-src="{{config_env.base_url}}/assets/scam_training/logo.png" />
+<img ng-if="is_custom_training" class="logo-landing-page" style="width: 135px" ng-src="{{config_env.base_url}}/assets/scam_training/srg_logo.png" />
+
+<div class="text-landing-page" >
+    <p class="paragraph">You have just clicked on a Phishing Email.</p>
+    <p class="paragraph1">But don't be alarmed, this is part of {{configs[0].company_name}}'s security awareness and training program.</p>
+    <p class="paragraph2">This is a safe and friendly environment to learn about phishing S.C.A.M's</p>
+    <p class="paragraph3">Click next to <span class="boldText">discover the techniques used in this <br/>particular phishing email</span> and how to spot them in the future</p>
+    <button class="btn btn-primary btn-intro-landing" type="button" ng-click="navigation.startTraining()">NEXT</button>
+</div>

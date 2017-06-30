@@ -1,0 +1,93 @@
+<span id = "arrow-hook"></span>
+<div class="menu-title">
+    <ul>
+        <li id= "introduction"><a href="/scam_training#/home">Introduction</a></li>
+        <li id= "definitions"><a href="/scam_training#/definitions">Definitions</a></li>
+        <li id= "scam-training"><a href="/scam_training#/home">S.C.A.M Training</a></li>
+    </ul>
+</div>
+<hr class = "separate-line"/>
+<div class="menu-content-table">
+    <ul ng-repeat = "(section_name, section) in json_data.all_training track by $index" id="menu-col-1"  ng-if = "section_name == 'home' ">
+        <li ng-repeat = "(key, val) in section track by $index" ng-class="{ 'completed' : pages_completed.indexOf(section_name + '.' + val.action) != -1 || (key == 1 && val['quiz'].completed == true)}">
+            <div class="{{val.active == false || val.quiz.active == false ? 'dot inactive_item' : 'dot'}}" ></div>
+            <a ng-href="{{val.active == true ? '/scam_training#/' + section_name + '/' +  val.action : ''}}" ng-if = "key != 1" data-training-page-id = "{{val.id}}" ng-click="navigation.is_menu = true" class="{{val.active==false ? 'inactive_item' : ''}}">{{name[section_name][key]}}</a>
+            <a ng-href="{{val.quiz.active == true ? '/scam_training#/' + section_name + '/quiz' : ''}}" ng-if = "key == 1" class="{{val.quiz.active == false ? 'inactive_item' : ''}}">{{name[section_name][key]}}</a>
+            <span class="percentage" id="{{section_name + '-quiz-id'}}" ng-if = "key == 1">{{val.quiz.percentage != -1 ? (val.quiz.percentage + '%') : ''}}</span>
+        </li>
+    </ul>
+    <ul ng-repeat = "(section_name, section) in json_data.all_training track by $index" id="menu-col-2"  ng-if = "section_name == 'definitions' ">
+        <li ng-repeat = "(key, val) in section track by $index" ng-class="{ 'completed' : pages_completed.indexOf(section_name + '.' + val.action) != -1 || (key == 7 && val['quiz'].completed == true)}">
+            <div class="{{val.active == false || val.quiz.active == false ? 'dot inactive_item' : 'dot'}}" ></div>
+            <a ng-href="{{val.active == true ? '/scam_training#/' + section_name + '/' +  val.action : ''}}" ng-if = "key != 7" data-training-page-id = "{{val.id}}" ng-click="navigation.is_menu = true" class="{{val.active==false ? 'inactive_item' : ''}}">{{name[section_name][key]}}</a>
+            <a ng-href="{{val.quiz.active == true ? '/scam_training#/' + section_name + '/quiz' : ''}}" ng-if = "key == 7" class="{{val.quiz.active == false ? 'inactive_item' : ''}}">{{name[section_name][key]}}</a>
+            <span class="percentage" id="{{section_name + '-quiz-id'}}" ng-if = "key == 7">{{val.quiz.percentage != -1 ? (val.quiz.percentage + '%') : ''}}</span>
+        </li>
+    </ul>
+    <ul ng-repeat = "(section_name, section) in json_data.all_training track by $index" id="menu-{{section_name}}" ng-if = "section_name != 'home' && section_name != 'definitions' ">
+        <div class="col-header">
+            <span class = "symbol">{{section_name | getFirstLetter}}</span>
+            <span class = "title">{{section_name}}</span>
+        </div>
+        <li ng-repeat = "(key, val) in section track by $index" ng-class="{ 'completed' : pages_completed.indexOf(section_name + '.' + val.action) != -1  || (key == 5 && val['quiz'].completed == true)}">
+            <div class="{{val.active == false || val.quiz.active == false ? 'dot inactive_item' : 'dot'}}" ></div>
+            <a ng-href="{{val.active == true ? '/scam_training#/' + section_name + '/' +  val.action : ''}}" ng-if = "key != 5" data-training-page-id = "{{val.id}}" ng-click="navigation.is_menu = true" class="{{val.active==false ? 'inactive_item' : ''}}">{{name[section_name][key]}}</a>
+            <a ng-href="{{val.quiz.active == true ? '/scam_training#/' + section_name + '/quiz' : ''}}" ng-if = "key == 5" class="{{val.quiz.active == false ? 'inactive_item' : ''}}">{{name[section_name][key]}}</a>
+            <span class="percentage" id="{{section_name + '-quiz-id'}}" ng-if = "key == 5">{{val.quiz.percentage != -1 ? (val.quiz.percentage + '%') : ''}}</span>
+        </li>
+    </ul>
+</div>
+<div class="clearfix"></div>
+<div class = "menu-title">
+    <ul>
+        <li><a style="cursor: default" >Achievements</a></li>
+        <li class = "pull-left">
+            <a class="see-more" ng-click = "menuContent.showAchieve()">See more >></a>
+        </li>
+    </ul>
+
+</div>
+<hr class = "separate-line" />
+<div class="menu-achievements">
+    <ul>
+        <li ng-repeat="achieve in menuContent.student_achieve">
+            <div ng-if="achieve.rank == 3" class="icon {{achieve.type}}"></div>
+            <div ng-if="achieve.rank < 3" class="icon {{achieve.type}}-disable"></div>
+            <div class="star star-{{achieve.rank}}"></div>
+        </li>
+        <li>
+            <div ng-if="best_score >= menuContent.pass_score">
+                <div class="icon award"></div>
+                <div class="star star-3"></div>
+            </div>
+            <div ng-if="best_score < menuContent.pass_score">
+                <div class="icon award-disable"></div>
+                <div class="star star-0"></div>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="clearfix"></div>
+<div class = "menu-title">
+    <ul>
+        <li>
+            <a style="cursor: default" >Score</a>
+        </li>
+    </ul>
+</div>
+<hr class="separate-line" />
+<div class="menu-score">
+    <div id = "score">
+        <span class="score">Current score</span>
+        <span ng-if="menu_current_score < menuContent.pass_score" id="fail-current-score"><b>{{menu_current_score}}%</b></span>
+        <span ng-if="menu_current_score >= menuContent.pass_score" id="pass-current-score"><b>{{menu_current_score}}%</b></span>
+    </div>
+    <div id = "best-score">
+        <ins class = "{{cup_icon_class}}"></ins>
+        <span class="score">Best score</span>
+        <span id="display-best-score" style="padding-left: 20px">
+            <b ng-if="best_score == -1">N/A</b>
+            <b ng-if="best_score != -1">{{best_score}}%</b>
+        </span>
+    </div>
+</div>
