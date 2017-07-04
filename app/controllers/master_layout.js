@@ -50,7 +50,7 @@ angular.module('mainApp').controller('MasterLayoutController', [ '$rootScope',
         $rootScope.slide_has_learn = 0;
         $rootScope.slidesRead = [];
         $rootScope.achievement_data = null;
-        //$rootScope.pages_completed = [];
+        $rootScope.pages_completed = [];
 
         $rootScope.drawPercentageChart = function (section_page, slides_index, increase_val) {
             section_page = $scope.setSectionPagesName(section_page);
@@ -65,7 +65,7 @@ angular.module('mainApp').controller('MasterLayoutController', [ '$rootScope',
                     $rootScope.slide_has_learn += increase_val;
                 }
             }
-            $rootScope.drawPieChart([$rootScope.slide_has_learn, $scope.total_slide - $rootScope.slide_has_learn]);
+            // $rootScope.drawPieChart([$rootScope.slide_has_learn, $scope.total_slide - $rootScope.slide_has_learn]);
         };
 
         $scope.setSectionPagesName = function (section_page) {

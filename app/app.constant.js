@@ -364,4 +364,287 @@ angular.module('mainApp')
         relax : 'Directive #4'
     }
 
+    // STUDENT_INFO: {
+    //       "all_training": {
+    //         "home": [
+    //           {
+    //             "id": 12,
+    //             "action": "home",
+    //             "completed": false,
+    //             "link_to": "home",
+    //             "active": true
+    //           },
+    //           {
+    //             "quiz": {
+    //               "link_to": "link_to_quiz",
+    //               "completed": false,
+    //               "last_complete_question": 0,
+    //               "percentage": -1,
+    //               "active": true
+    //             }
+    //           }
+    //         ],
+    //         "definitions": [
+    //           {
+    //             "id": 13,
+    //             "action": "definitions",
+    //             "completed": false,
+    //             "link_to": "definitions",
+    //             "active": true
+    //           },
+    //           {
+    //             "id": 35,
+    //             "action": "phishing",
+    //             "completed": false,
+    //             "link_to": "phishing",
+    //             "active": true
+    //           },
+    //           {
+    //             "id": 36,
+    //             "action": "spear_phishing",
+    //             "completed": false,
+    //             "link_to": "spear_phishing",
+    //             "active": true
+    //           },
+    //           {
+    //             "id": 37,
+    //             "action": "cc_and_bc",
+    //             "completed": false,
+    //             "link_to": "cc_and_bc",
+    //             "active": true
+    //           },
+    //           {
+    //             "id": 38,
+    //             "action": "ip_addresses",
+    //             "completed": false,
+    //             "link_to": "ip_addresses",
+    //             "active": true
+    //           },
+    //           {
+    //             "id": 39,
+    //             "action": "domain_names",
+    //             "completed": false,
+    //             "link_to": "domain_names",
+    //             "active": true
+    //           },
+    //           {
+    //             "id": 40,
+    //             "action": "url",
+    //             "completed": false,
+    //             "link_to": "url",
+    //             "active": true
+    //           },
+    //           {
+    //             "quiz": {
+    //               "link_to": "link_to_quiz",
+    //               "completed": false,
+    //               "last_complete_question": 0,
+    //               "percentage": -1,
+    //               "active": true
+    //             }
+    //           }
+    //         ],
+    //         "sender": [
+    //           {
+    //             "id": 14,
+    //             "action": "introduction",
+    //             "completed": false,
+    //             "link_to": "introduction",
+    //             "active": true
+    //           },
+    //           {
+    //             "id": 15,
+    //             "action": "ip_addresses",
+    //             "completed": false,
+    //             "link_to": "ip_addresses",
+    //             "active": true
+    //           },
+    //           {
+    //             "id": 16,
+    //             "action": "free_email_providers",
+    //             "completed": false,
+    //             "link_to": "free_email_providers",
+    //             "active": true
+    //           },
+    //           {
+    //             "id": 17,
+    //             "action": "unusual_domain_names",
+    //             "completed": false,
+    //             "link_to": "unusual_domain_names",
+    //             "active": true
+    //           },
+    //           {
+    //             "id": 18,
+    //             "action": "incorrect_addressee",
+    //             "completed": false,
+    //             "link_to": "incorrect_addressee",
+    //             "active": true
+    //           },
+    //           {
+    //             "quiz": {
+    //               "link_to": "link_to_quiz",
+    //               "completed": false,
+    //               "last_complete_question": 0,
+    //               "percentage": -1,
+    //               "active": true
+    //             }
+    //           }
+    //         ],
+    //         "content": [
+    //           {
+    //             "id": 20,
+    //             "action": "introduction",
+    //             "completed": false,
+    //             "link_to": "introduction",
+    //             "active": true
+    //           },
+    //           {
+    //             "id": 21,
+    //             "action": "grammatical_errors",
+    //             "completed": false,
+    //             "link_to": "grammatical_errors",
+    //             "active": true
+    //           },
+    //           {
+    //             "id": 22,
+    //             "action": "urgency",
+    //             "completed": false,
+    //             "link_to": "urgency",
+    //             "active": true
+    //           },
+    //           {
+    //             "id": 23,
+    //             "action": "expected",
+    //             "completed": false,
+    //             "link_to": "expected",
+    //             "active": true
+    //           },
+    //           {
+    //             "id": 24,
+    //             "action": "confusion",
+    //             "completed": false,
+    //             "link_to": "confusion",
+    //             "active": true
+    //           },
+    //           {
+    //             "quiz": {
+    //               "link_to": "link_to_quiz",
+    //               "completed": false,
+    //               "last_complete_question": 0,
+    //               "percentage": -1,
+    //               "active": true
+    //             }
+    //           }
+    //         ],
+    //         "action": [
+    //           {
+    //             "id": 25,
+    //             "action": "introduction",
+    //             "completed": false,
+    //             "link_to": "introduction",
+    //             "active": true
+    //           },
+    //           {
+    //             "id": 26,
+    //             "action": "look_under_link",
+    //             "completed": false,
+    //             "link_to": "look_under_link",
+    //             "active": true
+    //           },
+    //           {
+    //             "id": 27,
+    //             "action": "ip_address_unused",
+    //             "completed": false,
+    //             "link_to": "ip_address_unused",
+    //             "active": true
+    //           },
+    //           {
+    //             "id": 28,
+    //             "action": "attachments",
+    //             "completed": false,
+    //             "link_to": "attachments",
+    //             "active": true
+    //           },
+    //           {
+    //             "id": 29,
+    //             "action": "forms",
+    //             "completed": false,
+    //             "link_to": "forms",
+    //             "active": true
+    //           },
+    //           {
+    //             "quiz": {
+    //               "link_to": "link_to_quiz",
+    //               "completed": false,
+    //               "last_complete_question": 0,
+    //               "percentage": -1,
+    //               "active": true
+    //             }
+    //           }
+    //         ],
+    //         "manage": [
+    //           {
+    //             "id": 30,
+    //             "action": "introduction",
+    //             "completed": false,
+    //             "link_to": "introduction",
+    //             "active": true
+    //           },
+    //           {
+    //             "id": 31,
+    //             "action": "dont_respond",
+    //             "completed": false,
+    //             "link_to": "dont_respond",
+    //             "active": true
+    //           },
+    //           {
+    //             "id": 32,
+    //             "action": "dont_do_anything",
+    //             "completed": false,
+    //             "link_to": "dont_do_anything",
+    //             "active": true
+    //           },
+    //           {
+    //             "id": 33,
+    //             "action": "contact_help",
+    //             "completed": false,
+    //             "link_to": "contact_help",
+    //             "active": true
+    //           },
+    //           {
+    //             "id": 34,
+    //             "action": "relax",
+    //             "completed": false,
+    //             "link_to": "relax",
+    //             "active": true
+    //           },
+    //           {
+    //             "quiz": {
+    //               "link_to": "link_to_quiz",
+    //               "completed": false,
+    //               "last_complete_question": 0,
+    //               "percentage": -1,
+    //               "active": true
+    //             }
+    //           }
+    //         ]
+    //       },
+    //       "completed_page": [
+            
+    //       ],
+    //       "current_score": -1,
+    //       "last_visit_page": "",
+    //       "best_score": {
+    //         "score": -1,
+    //         "sections": {
+              
+    //         },
+    //         "total": 1
+    //       },
+    //       "service_desk": [
+            
+    //       ],
+    //       "pass_score": 0
+    //     }
+    // }
   });

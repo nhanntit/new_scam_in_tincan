@@ -7,13 +7,13 @@ angular.module('mainApp').config(['$stateProvider', '$urlRouterProvider',
     $stateProvider
         .state('introduction', {
         url: '/home?landing_slide',
-        templateUrl: 'scam_training/templates/introduction/index.html',
+        templateUrl: './app/templates/introduction/index.html',
         controller: 'IntroductionController as introduction'
         })
         // Manage achievement for student
         .state('achievement', {
             url: '/achievement',
-            templateUrl: 'scam_training/templates/achievement/index.html',
+            templateUrl: 'app/templates/achievement/index.html',
             controller: 'AchievementController as achieve'
         })
       // Definition section training

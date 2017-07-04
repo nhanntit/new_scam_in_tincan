@@ -132,14 +132,17 @@ angular.module('mainApp').controller('IntroductionController', ['$scope', '$http
                 switch ($scope.animate_number) {
                     case 0:
                         introduction.initAnimation.animate_1(true);
+                        trainingService.postPageRead();
                         break;
                     case 1:
                         introduction.initAnimation.animate_2(true);
+                        trainingService.postPageRead();
                         break;
                     case 2:
                         $scope.animate_slide = false;
                         $scope.enable_btn_action = true;
                         introduction.initAnimation.init();
+                        trainingService.postPageRead();
                 }
 
                 $rootScope.drawPercentageChart('home.home', $scope.index_array, 1);

@@ -5,8 +5,9 @@ angular.module('mainApp', [
   'ui.bootstrap',
   'ngSanitize',
   'ngAnimate',
-  'LocalStorageModule',
-  'templates'
+  'LocalStorageModule'
+  // ,
+  // 'templates'
 ])
 .config(['localStorageServiceProvider', function (localStorageServiceProvider) {
     localStorageServiceProvider.setPrefix('ph2');
