@@ -172,7 +172,7 @@ angular.module('mainApp').config(['$stateProvider', '$urlRouterProvider',
         })
        // Quiz management
       .state('quiz', {
-          templateUrl: 'scam_training/templates/quiz/index.html',
+          templateUrl: 'app/templates/quiz/index.html',
           controller: 'QuizController as quiz'
       })
         .state('quiz.home', {

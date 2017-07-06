@@ -362,7 +362,175 @@ angular.module('mainApp')
         dont_do_anything : 'Directive #2',
         contact_help : 'Directive #3',
         relax : 'Directive #4'
+    },
+
+    QUIZ_INFO: {
+      quiz: {
+        quiz_training_section_id: 6,
+        questions: [
+          {
+            index: 0,
+            id: 9,
+            answers_count: 4,
+            question: "M stands for _____",
+            answers: [
+              {
+                id: 32,
+                text: "Millie"
+              },
+              {
+                id: 31,
+                text: "Manage"
+              },
+              {
+                id: 34,
+                text: "Microsoft"
+              },
+              {
+                id: 33,
+                text: "Mail"
+              }
+            ],
+            cid: 31
+          },
+          {
+            index: 1,
+            id: 7,
+            answers_count: 4,
+            question: "S stands for _____",
+            answers: [
+              {
+                id: 23,
+                text: "Slippery"
+              },
+              {
+                id: 26,
+                text: "Slug"
+              },
+              {
+                id: 25,
+                text: "Slimey"
+              },
+              {
+                id: 24,
+                text: "Sender"
+              }
+            ],
+            cid: 24
+          },
+          {
+            index: 2,
+            id: 8,
+            answers_count: 4,
+            question: "A stands for _____ ",
+            answers: [
+              {
+                id: 29,
+                text: "Action"
+              },
+              {
+                id: 30,
+                text: "Axel"
+              },
+              {
+                id: 28,
+                text: "Attack "
+              },
+              {
+                id: 27,
+                text: "Apples"
+              }
+            ],
+            cid: 29
+          }
+        ],
+        quiz_id: null
+      }
     }
+
+    // QUIZ_INFO: {
+    //   "quiz": {
+    //     "quiz_training_section_id": 6,
+    //     "questions": [
+    //       {
+    //         "index": 0,
+    //         "id": 9,
+    //         "answers_count": 4,
+    //         "question": "M stands for _____",
+    //         "answers": [
+    //           {
+    //             "id": 32,
+    //             "text": "Millie"
+    //           },
+    //           {
+    //             "id": 31,
+    //             "text": "Manage"
+    //           },
+    //           {
+    //             "id": 34,
+    //             "text": "Microsoft"
+    //           },
+    //           {
+    //             "id": 33,
+    //             "text": "Mail"
+    //           }
+    //         ],
+    //         "cid": 31
+    //       },
+    //       {
+    //         "index": 1,
+    //         "id": 7,
+    //         "answers_count": 4,
+    //         "question": "S stands for _____",
+    //         "answers": [
+    //           {
+    //             "id": 23,
+    //             "text": "Slippery"
+    //           },
+    //           {
+    //             "id": 26,
+    //             "text": "Slug"
+    //           },
+    //           {
+    //             "id": 25,
+    //             "text": "Slimey"
+    //           },
+    //           {
+    //             "id": 24,
+    //             "text": "Sender"
+    //           }
+    //         ],
+    //         "cid": 24
+    //       },
+    //       {
+    //         "index": 2,
+    //         "id": 8,
+    //         "answers_count": 4,
+    //         "question": "A stands for _____ ",
+    //         "answers": [
+    //           {
+    //             "id": 29,
+    //             "text": "Action"
+    //           },
+    //           {
+    //             "id": 30,
+    //             "text": "Axel"
+    //           },
+    //           {
+    //             "id": 28,
+    //             "text": "Attack "
+    //           },
+    //           {
+    //             "id": 27,
+    //             "text": "Apples"
+    //           }
+    //         ],
+    //         "cid": 29
+    //       }
+    //     ],
+    //     "quiz_id": null
+    //   }
+    // }
 
     // STUDENT_INFO: {
     //       "all_training": {

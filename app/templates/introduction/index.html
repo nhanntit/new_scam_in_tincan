@@ -42,8 +42,8 @@
         </div>
 
         <div id="slides" ng-show="!animate_slide">
-            <div ng-if="!is_statics"><div ng-include="'scam_training/templates/introduction/'+param.data"></div></div>
-            <div ng-if="is_statics"><img ng-src="/assets/scam_training/slides/{{param.data}}" style="width: 100%;"></div>
+            <div ng-if="!is_statics"><div ng-include="'app/templates/introduction/'+param.data"></div></div>
+            <div ng-if="is_statics"><img ng-src="{{config_env.base_url}}/assets/scam_training/slides/{{param.data}}" style="width: 100%;"></div>
         </div>
     </div>
 

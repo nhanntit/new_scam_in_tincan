@@ -22,26 +22,32 @@ angular.module('mainApp').controller('QuizController', ['$scope', '$http', 'quiz
 
         var icur = 0;
 
+
         //Get Quiz
         quiz.getQuizzes = function(section){
-            quizService.getRandomQuizzes(section)
-                .then(function(result){
-                    quiz.config.is_loader = false;
-                    quiz.config.show_content = true;
-                    quiz.quizzes = result.data;
-                    if(isNaN(result.data.quiz.quiz_training_section_id))
-                    {
-                        quiz.config.setup_question = false;
-                        return;
-                    }
-                    quiz.quiz_attrs = quiz.initialQuizAttrs(result.data);
-                    quiz.setCurrentQuiz(icur);
-                    quiz.setupNavigation();
-                },
-                function(result){
-                    quiz.config.setup_question = false
-                });
+            return SCAM_CONSTANT.QUIZ_INFO;
         };
+        
+        // //Get Quiz
+        // quiz.getQuizzes = function(section){
+        //     quizService.getRandomQuizzes(section)
+        //         .then(function(result){
+        //             quiz.config.is_loader = false;
+        //             quiz.config.show_content = true;
+        //             quiz.quizzes = result.data;
+        //             if(isNaN(result.data.quiz.quiz_training_section_id))
+        //             {
+        //                 quiz.config.setup_question = false;
+        //                 return;
+        //             }
+        //             quiz.quiz_attrs = quiz.initialQuizAttrs(result.data);
+        //             quiz.setCurrentQuiz(icur);
+        //             quiz.setupNavigation();
+        //         },
+        //         function(result){
+        //             quiz.config.setup_question = false
+        //         });
+        // };
         //Calculate percent for quiz
         quiz.correct_count = 0;
         quiz.getAchieIndex = function(data, section_name){

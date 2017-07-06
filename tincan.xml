@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<tincan xmlns="http://projecttincan.com/tincan.xsd">
+    <activities>
+        <activity id="http://id.tincanapi.com/activity/tincan-prototypes/golf-example" type="http://adlnet.gov/expapi/activities/course">
+            <name>Tin Can New SCAM Demontration</name>
+            <description lang="en-US">An Demo of new SCAM with TinCan.</description>
+            <launch lang="en-us">index.html</launch>
+        </activity>
+    </activities>
+</tincan>
